@@ -1,0 +1,8 @@
+.vscode/settings.json
+**/.DS_Store
+**/__pycache__
+db.sqlite3
+
+.vscode/
+
+upwardmobility/db.sqlite3
