@@ -1,0 +1,17 @@
+{% extends 'mobility/regular_base.html' %}
+{% load static %}
+{% block top_section %}
+{% endblock top_section %}
+
+{% block main_content %}
+
+
+<h1>Articles</h1>
+<ul>
+{% for article in object_list %}
+    <li><a href="{% url 'post_detail' slug=article.slug %}">{{ article.published_date|date }} - {{ article.title }}</a></li>
+{% empty %}
+    <li>No articles yet.</li>
+{% endfor %}
+</ul>
+{% endblock main_content %}

@@ -1,0 +1,14 @@
+{% extends 'mobility/regular_base.html' %}
+{% load static %}
+{% block top_section %}
+{% endblock top_section %}
+
+{% block main_content %}
+
+<h1>{{ object.title }}</h1>
+<p>Published: {{ object.published_date|date }}</p>
+
+
+<p>{{ object.text.html|safe }}</p>
+
+{% endblock main_content %}

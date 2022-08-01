@@ -1,0 +1,11 @@
+{% extends 'mobility/regular_base.html' %}
+{% load static %}
+
+{% block main_content %}
+<h2>Compare Counties </h2>
+<p class="lead">
+    Choose two counties to compare
+</p>
+
+<img class="img-responsive  center-block" src="{% static 'mobility/map-pins.jpg' %}" alt="">
+{% endblock main_content %}

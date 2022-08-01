@@ -1,7 +1,13 @@
 from django.urls import path
+from django.views.generic.base import TemplateView
 
 from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path("blog/<slug:slug>", views.PostDetailView.as_view(), name="post_detail"),
+    path("blog", views.PostListView.as_view(), name="post_list"),
+    path('national-view', views.national_view, name="national_view"),
+    path('compare-counties', views.compare_counties, name="compare_counties" ),
+    path('resources', TemplateView.as_view(template_name='mobility/resources.html'), name="resources" )
 ]

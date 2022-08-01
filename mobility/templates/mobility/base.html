@@ -58,18 +58,18 @@ Although you can use them, for a more unique website, replace these images with 
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#">Compare Counties</a>
+                        <a href="{% url 'post_list' %}">Blog</a>
                     </li>
-					<!-- <li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Explore <span class="caret"></span></a>
 						<ul class="dropdown-menu" aria-labelledby="about-us">
-							<li><a href="#">Engage</a></li>
-							<li><a href="#">Pontificate</a></li>
-							<li><a href="#">Synergize</a></li>
+							<li><a href="{% url 'compare_counties' %}">Compare Counties</a></li>
+							<li><a href="{% url 'national_view' %}">US National View</a></li>
+							<li><a href="#">County Details</a></li>
 						</ul>
-					</li> -->
+					</li>
                     <li>
-                        <a href="#">Resources</a>
+                        <a href="{% url 'resources' %}">Resources</a>
                     </li>
                 </ul>
 

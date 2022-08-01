@@ -1,0 +1,59 @@
+{% extends 'mobility/base.html' %}
+{% load static %}
+
+{% block extra_style %}
+<style>
+
+.page-intro {
+	color: #fff;
+    /* background-color: #8FBDB7; */
+    padding: 30px 0;
+    text-align: center;
+    /* background-color: rgba(143,189,183, 0.77); */
+}
+.navbar-default {
+    background-color: grey;
+}
+
+    .container {
+        min-height: 80%;
+    }
+
+</style>
+{% endblock extra_style %}
+{% block content %}
+
+	<!-- Intro Section -->
+    <section class="page-intro">
+        {% block top_section %}
+
+        {% endblock top_section %}
+    </section>
+
+	<!-- Content 1 -->
+
+        <div class="container">
+        {% block main_content %}
+
+            <div class="row">
+
+                <div class="col-sm-6">
+                    <img class="img-responsive img-circle center-block" src="{% static 'mobility/education.jpg' %}" alt="">
+                </div>
+                <div class="col-sm-6">
+                	<h2 class="section-header">Access to Education</h2>
+                	<p class="lead text-muted">
+                        Access to education is a critical part of creating an upwardly mobile community. This includes access to preschool in the developmental years,
+                    as well as a quality education going forward. </p>
+                	<a href="#" class="btn btn-primary btn-lg">Explore</a>
+                </div>
+
+            </div>
+
+        {% endblock main_content %}
+    </div>
+
+
+
+
+{% endblock content %}
