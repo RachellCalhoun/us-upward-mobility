@@ -26,6 +26,10 @@
 <p class="lead">
     Choose two counties to compare
 </p>
+<form method="get" class="form-inline">
+  {{ form }}
+  <button class="btn btn-primary">Submit </button>
+</form>
 {% if fips %}
 <p>FIPS code : {{fips}}</p>
 <div class="frame-container">
