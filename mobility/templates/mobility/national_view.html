@@ -1,5 +1,11 @@
 {% extends 'mobility/regular_base.html' %}
 {% load static %}
+
+{% block extra_headers %}
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+{% endblock extra_headers %}
+
 {% block top_section %}
 {% endblock top_section %}
 
@@ -9,6 +15,9 @@
     Having a larger view and zooming out can reveal patterns and outliers
 </p>
 
-<img class="img-responsive  center-block" src="{% static 'mobility/map-pins.jpg' %}" alt="">
+{% autoescape off %}
+{{ pl_div }}
+{% endautoescape %}
+
 {% endblock main_content %}
 
