@@ -1,19 +1,18 @@
+import json
+
 from django.shortcuts import render
 from django.template import loader
 # Create your views here.
 from django.http import HttpResponse
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from django.conf import settings
+
 import pandas as pd
 import plotly.offline as opy
-from urllib.request import urlopen
-import json
 import plotly.express as px
 
 from mobility.models import Post
-# def index(request):
-#     return HttpResponse("Hello, world. You're at the mobility index.")
-
 
 def index(request):
     template = loader.get_template('mobility/index.html')
@@ -32,19 +31,21 @@ def compare_counties(request):
 def national_view(request):
     metric = request.GET.get('metric', None)
 
-
     template = loader.get_template('mobility/national_view.html')
     fips = request.GET.get('fips', None)
     context = {'fips': fips, 'metric': metric}
     # plotly example
-    f = open('geojson-counties-fips.json')
+    if settings.DEBUG:
+        f = open('geojson-counties-fips.json')
+    else:
+        f = open('/home/upwardmobility/upwardmobility.pythonanywhere.com/geojson-counties-fips.json')
     # returns JSON object as
     # a dictionary
     counties = json.load(f)
 
     df = pd.read_csv("counties_merged.csv",
                     dtype={"fips": str})
-
+    df['FIPS'] = df['FIPS'].astype(int).astype(str).str.zfill(5)
     fig2 = px.choropleth(df, geojson=counties, locations='FIPS', color=metric,
                             color_continuous_scale="Viridis",
                             range_color=(0, 1),
