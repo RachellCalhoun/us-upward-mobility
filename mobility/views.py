@@ -36,14 +36,16 @@ def national_view(request):
     context = {'fips': fips, 'metric': metric}
     # plotly example
     if settings.DEBUG:
-        f = open('geojson-counties-fips.json')
+        file_path = ''
+
     else:
-        f = open('/home/upwardmobility/upwardmobility.pythonanywhere.com/geojson-counties-fips.json')
+        file_path = '/home/upwardmobility/upwardmobility.pythonanywhere.com/'
+    f = open(f'{file_path}geojson-counties-fips.json')
     # returns JSON object as
     # a dictionary
     counties = json.load(f)
 
-    df = pd.read_csv("counties_merged.csv",
+    df = pd.read_csv(f"{file_path}counties_merged.csv",
                     dtype={"fips": str})
     df['FIPS'] = df['FIPS'].astype(int).astype(str).str.zfill(5)
     fig2 = px.choropleth(df, geojson=counties, locations='FIPS', color=metric,
