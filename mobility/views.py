@@ -50,7 +50,7 @@ def national_view(request):
     counties = json.load(f)
 
     df = pd.read_csv(f"{file_path}counties_merged.csv",
-                    dtype={"fips": str})
+                    dtype={"fips": str})[['FIPS', metric, 'NAME']]
 
     df['FIPS'] = df['FIPS'].astype(int).astype(str).str.zfill(5)
 
@@ -65,15 +65,8 @@ def national_view(request):
                             color_continuous_scale="Viridis",
                             range_color=(low, high),
                             scope="usa",
-                            labels={metric:metric},hover_data=["NAME", metric, "LINK"])
+                            labels={metric:metric},hover_data=["NAME", metric])
 
-    fig2.update_layout(
-        hoverlabel=dict(
-            bgcolor="white",
-            font_size=16,
-            font_family="Rockwell",
-        )
-    )
 
 
     fig2.update_layout(margin={"r":0,"t":0,"l":0,"b":0})

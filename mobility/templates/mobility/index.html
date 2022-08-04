@@ -17,7 +17,9 @@ header {
     -o-background-size: cover;
     background-color: rgba(0, 0, 0, 0.37);
 }
-
+.content {
+    padding:5px;
+}
 </style>
 <link href="{% static 'mobility/css/main.css' %}" rel="stylesheet">
 {% endblock extra_style %}
@@ -38,13 +40,91 @@ header {
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
-                	<span class="glyphicon glyphicon-apple" style="font-size: 60px"></span>
-                    <h2 class="section-heading">Completely synergize resource taxing relationships</h2>
-                    <p class="text-light">Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.</p>
+                    <h2 class="section-heading">Summary</h2>
+                    <p class="text-light">To measure how upwardly mobile a community is 8 domains to consider:
+                        Housing, Health, Local Governance, Neighborhoods, Saftey, Education, Work and Financial Wellbeing.
+                        Each of these domains have a number of metrics collected from various datasets with the aim to investigate
+                        not only how upwardly mobile a community is but also in which areas that community could focus their attention and resources.
+                        This project was inspired and has intended to follow the research report
+                        <a style="color:white;font-weight:bold;" href="https://www.urban.org/research/publication/boosting-upward-mobility-metrics-inform-local-action">Boosting Upward Mobility: metrics
+                        to Inform Local Action.</a>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
+
+	<!-- Content 1 -->
+    <section class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <img class="img-responsive img-circle center-block" src="{% static 'mobility/housing.jpg' %}" alt="">
+                </div>
+                <div class="col-sm-6">
+                	<h2 class="section-header">Housing</h2>
+                	<p class="lead text-muted">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+	<!-- Content 2 -->
+    <section class="content content-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                	<h2 class="section-header">Access To Healthcare</h2>
+                	<p class="lead text-light">
+                        Healthcare is important to a thriving community. We look at access to primary care facilities for counties across the US. </p>
+                </div>
+                <div class="col-sm-6">
+                    <img class="img-responsive img-circle center-block" src="{% static 'mobility/healthcare.jpg' %}" alt="">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Promos -->
+	<div class=" intro container-fluid">
+        <div class="row promo " style="padding-left: 10px;padding-right: 10px;">
+
+				<div class="col-md-4 item-1">
+					<h3>
+						Local Governance
+					</h3>
+                    <p>Excepteur sint occaecat cupidatat non proident,
+                        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+
+
+				<div class="col-md-4 item-2">
+					<h3>
+						Neighborhoods
+					</h3>
+                    <p>Excepteur sint occaecat cupidatat non proident,
+                        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+
+
+
+				<div class="col-md-4 item-3">
+					<h3>
+						Saftey
+					</h3>
+                    <p>Excepteur sint occaecat cupidatat non proident,
+                        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+
+        </div>
+    </div>
+    <!-- /.container-fluid -->
 
 	<!-- Content 1 -->
     <section class="content">
@@ -58,7 +138,6 @@ header {
                 	<p class="lead text-muted">
                         Access to education is a critical part of creating an upwardly mobile community. This includes access to preschool in the developmental years,
                     as well as a quality education going forward. </p>
-                	<a href="#" class="btn btn-primary btn-lg">Explore</a>
                 </div>
 
             </div>
@@ -70,54 +149,24 @@ header {
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                	<h2 class="section-header">Access To Healthcare</h2>
+                	<h2 class="section-header">Work</h2>
                 	<p class="lead text-light">
-                        Healthcare is important to a thriving community. We look at access to primary care facilities for counties across the US. </p>
-                	<a href="#" class="btn btn-default btn-lg">Explore</a>
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  </p>
                 </div>
                 <div class="col-sm-6">
-                    <img class="img-responsive img-circle center-block" src="{% static 'mobility/healthcare.jpg' %}" alt="">
+                    <img class="img-responsive img-circle center-block" src="{% static 'mobility/work.jpg' %}" alt="">
                 </div>
 
             </div>
         </div>
     </section>
-
-    <!-- Promos -->
-	<!-- <div class="container-fluid">
-        <div class="row promo">
-        	<a href="#">
-				<div class="col-md-4 promo-item item-1">
-					<h3>
-						Unleash
-					</h3>
-				</div>
-            </a>
-            <a href="#">
-				<div class="col-md-4 promo-item item-2">
-					<h3>
-						Synergize
-					</h3>
-				</div>
-            </a>
-
-			<a href="#">
-				<div class="col-md-4 promo-item item-3">
-					<h3>
-						Procrastinate
-					</h3>
-				</div>
-            </a>
-        </div>
-    </div> -->
-    <!-- /.container-fluid -->
-
 	<!-- Content 3 -->
      <section class="content content-3">
         <div class="container">
-			<h2 class="section-header"><span class="glyphicon glyphicon-pushpin text-primary"></span><br> Sanity Check</h2>
-			<p class="lead text-muted">Holisticly predominate extensible testing procedures for reliable supply chains. Dynamically innovate resource-leveling customer service for state of the art customer service.</p>
-                    <a href="#" class="btn btn-primary btn-lg">Check Now</a>
+			<h2 class="section-header">Financial Wellbeing</h2>
+			<p class="lead text-muted"> Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
         </div>
     </section>
