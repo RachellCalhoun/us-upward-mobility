@@ -77,6 +77,7 @@ METRIC_CHOICES = (
 
 
 COUNTY_CHOICES = [
+    ('', 'Select a County'),
     ("05131","Sebastian County, Arkansas"),
     ("05133","Sevier County, Arkansas"),
     ("05135","Sharp County, Arkansas"),

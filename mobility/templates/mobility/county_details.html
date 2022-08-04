@@ -22,7 +22,7 @@
 
 }
 </style>
-<h2>Compare Counties </h2>
+<h2>County Details </h2>
 <p class="lead">
     Choose two counties to compare
 </p>
@@ -38,4 +38,10 @@
     <p>Your browser does not support iframes.</p>
   </iframe>
   {% endif %}
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#id_fips').select2({placeholder: 'Select a County'});
+  });
+
+     </script>
 {% endblock main_content %}

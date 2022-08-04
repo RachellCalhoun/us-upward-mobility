@@ -22,16 +22,15 @@ def index(request):
     }
     return HttpResponse(template.render(context, request))
 
-def compare_counties(request):
+def county_details(request):
     fips = request.GET.get('fips', None)
     form = CountyForm(initial={'fips': request.GET.get('fips', None)})
     context = {'fips': fips, 'form': form}
-    template = loader.get_template('mobility/compare_counties.html')
+    template = loader.get_template('mobility/county_details.html')
     return HttpResponse(template.render(context, request))
 
 
 def national_view(request):
-
     metric = request.GET.get('metric', 'population')
     metric_form = MetricForm(initial={'metric': request.GET.get('metric', 'population')})
     template = loader.get_template('mobility/national_view.html')
