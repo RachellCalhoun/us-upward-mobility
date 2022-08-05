@@ -36,43 +36,43 @@ def national_view(request):
     template = loader.get_template('mobility/national_view.html')
     fips = request.GET.get('fips', None)
     context = {'fips': fips, 'metric': metric}
-    # plotly example
-    if settings.DEBUG:
-        file_path = ''
-        url = ''
+    # # plotly example
+    # if settings.DEBUG:
+    #     file_path = ''
+    #     url = ''
 
-    else:
-        file_path = '/home/upwardmobility/upwardmobility.pythonanywhere.com/'
-        url = "https://upwardmobility.pythonanywhere.com/compare-counties"
-    f = open(f'{file_path}geojson-counties-fips.json')
-    # returns JSON object as
-    # a dictionary
-    counties = json.load(f)
+    # else:
+    #     file_path = '/home/upwardmobility/upwardmobility.pythonanywhere.com/'
+    #     url = "https://upwardmobility.pythonanywhere.com/compare-counties"
+    # f = open(f'{file_path}geojson-counties-fips.json')
+    # # returns JSON object as
+    # # a dictionary
+    # counties = json.load(f)
 
-    df = pd.read_csv(f"{file_path}counties_merged.csv",
-                    dtype={"fips": str})[['FIPS', metric, 'NAME']]
+    # df = pd.read_csv(f"{file_path}counties_merged.csv",
+    #                 dtype={"fips": str})[['FIPS', metric, 'NAME']]
 
-    df['FIPS'] = df['FIPS'].astype(int).astype(str).str.zfill(5)
+    # df['FIPS'] = df['FIPS'].astype(int).astype(str).str.zfill(5)
 
-    df['LINK'] = "[Link](https://upwardmobility.pythonanywhere.com/compare-counties?fips=" + df['FIPS'] + ")"
-    if metric:
-        low = min(df[metric].values)
-        high = max(df[metric].values)
-    else:
-        low = 0
-        high = 1
-    fig2 = px.choropleth(df, geojson=counties, locations='FIPS', color=metric,
-                            color_continuous_scale="Viridis",
-                            range_color=(low, high),
-                            scope="usa",
-                            labels={metric:metric},hover_data=["NAME", metric])
+    # df['LINK'] = "[Link](https://upwardmobility.pythonanywhere.com/compare-counties?fips=" + df['FIPS'] + ")"
+    # if metric:
+    #     low = min(df[metric].values)
+    #     high = max(df[metric].values)
+    # else:
+    #     low = 0
+    #     high = 1
+    # fig2 = px.choropleth(df, geojson=counties, locations='FIPS', color=metric,
+    #                         color_continuous_scale="Viridis",
+    #                         range_color=(low, high),
+    #                         scope="usa",
+    #                         labels={metric:metric},hover_data=["NAME", metric])
 
 
 
-    fig2.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
-    pl_div = opy.plot(fig2, output_type='div', include_plotlyjs=False)
+    # fig2.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+    # pl_div = opy.plot(fig2, output_type='div', include_plotlyjs=False)
 
-    context = { 'pl_div': pl_div, 'form': metric_form}
+    context = { 'form': metric_form, 'metric': metric}
     return HttpResponse(template.render(context, request))
 
 class PostListView(ListView):
