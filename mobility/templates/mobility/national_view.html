@@ -1,11 +1,6 @@
 {% extends 'mobility/regular_base.html' %}
 {% load static %}
 
-{% block extra_headers %}
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
-{% endblock extra_headers %}
-
 {% block top_section %}
 {% endblock top_section %}
 
@@ -42,10 +37,6 @@
     Having a larger view and zooming out can reveal patterns and outliers.
   </p>
 <p>Select a metric to see a metric on a national level, or click on a county to explore more details about that county's specific metrics.</p>
-
-
-
-
 
 <div class="frame-container">
   <iframe class="responsive-iframe"  src="https://davidhcoe-mads697-county-details-pr63wa.streamlitapp.com/?embedded=true&metric={{metric}}" >
