@@ -37,7 +37,7 @@ METRIC_CHOICES = (
         ('white_exposure', 'Racial Exposure: White Population'),
         ('black_exposure', 'Racial Exposure: Black Population'),
         ('native_american_exposure', 'Racial Exposure: Native American Population'),
-        ('Asian Exposure', 'Racial Exposure: Asian Population'),
+        ('asian_exposure', 'Racial Exposure: Asian Population'),
         # ('hawaiian_exposure', 'Hawaiian Exposure'),
         # ('some_other_race_alone_exposure',
         #     'Some Other Race Alone Exposure'),
