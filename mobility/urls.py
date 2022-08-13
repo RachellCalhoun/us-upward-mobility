@@ -9,6 +9,6 @@ urlpatterns = [
     path("blog", views.PostListView.as_view(), name="post_list"),
     path('national-view', views.national_view, name="national_view"),
     path('county-details', views.county_details, name="county_details" ),
-    path('preferred-metrics', views.preferred_metrics, name="preferred_metrics"),
+    path('county-rankings', views.county_rankings, name="county_rankings"),
     path('resources', TemplateView.as_view(template_name='mobility/resources.html'), name="resources" )
 ]
