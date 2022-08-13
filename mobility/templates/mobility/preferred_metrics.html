@@ -1,0 +1,47 @@
+{% extends 'mobility/regular_base.html' %}
+{% load static %}
+
+{% block top_section %}
+{% endblock top_section %}
+
+{% block main_content %}
+<style>
+  .frame-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 100%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+
+  }
+      /* Then style the iframe to fit in the container div with full height and width */
+  .responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+
+  }
+  </style>
+<h2>Preferred Metrics </h2>
+
+<p class="lead">
+    Everyone has difference priorities and preferences, select your top three to see a list of top recommended
+    counties. 
+  </p>
+  {{query_string}}
+<div class="frame-container">
+  <iframe class="responsive-iframe"  src="https://davidhcoe-mads697-main-1sf12v.streamlitapp.com/?embedded=true&page=picker" >
+</div>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#id_first_metric').select2({placeholder: 'Select a Metric'});
+    $('#id_second_metric').select2({placeholder: 'Select a Metric'});
+    $('#id_third_metric').select2({placeholder: 'Select a Metric'});
+
+});
+
+   </script>
+{% endblock main_content %}

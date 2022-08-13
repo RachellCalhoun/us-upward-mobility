@@ -33,6 +33,12 @@ def national_view(request):
     context = { 'form': metric_form, 'metric': metric}
     return HttpResponse(template.render(context, request))
 
+def preferred_metrics(request):
+
+    template = loader.get_template('mobility/preferred_metrics.html')
+
+    return HttpResponse(template.render({}, request))
+
 class PostListView(ListView):
     model = Post
 
