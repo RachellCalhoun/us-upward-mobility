@@ -3,5 +3,3 @@ Django==4.0.6
 sqlparse==0.4.2
 python-dotenv
 django-quill-editor==0.1.*
-plotly==5.9.*
-pandas==1.4.*
