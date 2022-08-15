@@ -32,6 +32,7 @@ METRIC_CHOICES = (
         ('asian_exposure', 'Racial Exposure: Asian Population'),
         ('transit_trips_index', 'Transit Trips Index'),
         ('transit_low_cost_index', 'Transit Low Cost Index'),
+        ('AQI', 'Air Quality Index')
 
     )
     ),
@@ -66,6 +67,7 @@ METRIC_CHOICES = (
     )
     ),
     ('Financial Wellbeing', (
+        ('debt_all', 'Share of Households with Debt in Collections'),
         ('median_family_income', 'Median Household Income'),
         ('income_20_percentile', '20th Percentile Household Income'),
         ('income_80_percentile', '80th Percentile Household Income'),
