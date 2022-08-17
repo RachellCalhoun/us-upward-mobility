@@ -5,8 +5,13 @@
 
 {% block main_content %}
 <div class="container">
+    <div class="row">
     <h1>{{ object.title }}</h1>
     <p>Published: {{ object.published_date|date }}</p>
-    <p>{{ object.text.html|safe }}</p>
+    <hr>
+    </div>
+    <div class="container"  style="max-width:80%;">
+        <p>{{ object.text.html|safe }}</p>
+    </div>
 </div>
 {% endblock main_content %}
