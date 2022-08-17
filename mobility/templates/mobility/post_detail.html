@@ -4,11 +4,9 @@
 {% endblock top_section %}
 
 {% block main_content %}
-
-<h1>{{ object.title }}</h1>
-<p>Published: {{ object.published_date|date }}</p>
-
-
-<p>{{ object.text.html|safe }}</p>
-
+<div class="container">
+    <h1>{{ object.title }}</h1>
+    <p>Published: {{ object.published_date|date }}</p>
+    <p>{{ object.text.html|safe }}</p>
+</div>
 {% endblock main_content %}

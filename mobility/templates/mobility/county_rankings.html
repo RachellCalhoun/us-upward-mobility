@@ -5,36 +5,17 @@
 {% endblock top_section %}
 
 {% block main_content %}
-<style>
-  .frame-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    padding-top: 100%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+<div class="container" style="min-height:0px;">
+  <h2>County Rankings</h2>
 
-  }
-      /* Then style the iframe to fit in the container div with full height and width */
-  .responsive-iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-
-  }
-  </style>
-<h2>County Rankings</h2>
-
-<p class="lead">
-    Everyone has different priorities and preferences, select your top three metrics and assign a weight to each totalling 100
-    to see a list of top recommended counties. 
-  </p>
+  <p class="lead">
+      Everyone has different priorities and preferences, select your top three metrics and assign a weight to each totalling 100
+      to see a list of top recommended counties. 
+    </p>
+</div>
 <div class="frame-container">
     <iframe class="responsive-iframe"  src="https://davidhcoe-mads697-main-1sf12v.streamlitapp.com/?embedded=true&page=picker" >
-</div>
     <p>Your browser does not support iframes.</p>
   </iframe>
-
+</div>
 {% endblock main_content %}
