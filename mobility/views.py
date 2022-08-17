@@ -43,6 +43,10 @@ class PostListView(ListView):
     model = Post
     ordering = ['-published_date']
 
+    def get_queryset(self, **kwargs):
+       qs = super().get_queryset(**kwargs)
+       return qs.filter(published_date__isnull=False)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
