@@ -41,6 +41,7 @@ def county_rankings(request):
 
 class PostListView(ListView):
     model = Post
+    ordering = ['-published_date']
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
