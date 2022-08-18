@@ -33,9 +33,9 @@ def national_view(request):
     context = { 'form': metric_form, 'metric': metric}
     return HttpResponse(template.render(context, request))
 
-def county_rankings(request):
+def county_finder(request):
 
-    template = loader.get_template('mobility/county_rankings.html')
+    template = loader.get_template('mobility/county_finder.html')
 
     return HttpResponse(template.render({}, request))
 
