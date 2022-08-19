@@ -14,6 +14,8 @@ class Post(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     slug = models.SlugField(null=False, unique=True)
+    iframe_media = models.TextField(null=True, blank=True)
+    
 
     def publish(self):
         self.published_date = timezone.now()

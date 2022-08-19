@@ -12,6 +12,9 @@
     </div>
     <div class="container"  style="max-width:80%;">
         <p>{{ object.text.html|safe }}</p>
+        {% if object.iframe_media %} 
+            {{ object.iframe_media|safe}}
+        {% endif %}
     </div>
 </div>
 {% endblock main_content %}

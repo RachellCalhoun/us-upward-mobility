@@ -139,26 +139,39 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_ROOT = BASE_DIR / 'static'
 
-QUILL_CONFIGS = {
-    'default':{
-        'theme': 'snow',
-        'modules': {
-            'syntax': True,
-            'toolbar': [
-                [
-                    {'font': []},
-                    {'header': []},
-                    {'align': []},
-                    'bold', 'italic', 'underline', 'strike', 'blockquote',
-                    {'color': []},
-                    {'background': []},
-                    { 'list': 'ordered'}, 
-                    { 'list': 'bullet' }
-                ],
-                ['code-block', 'link'],
-                ['clean'],
-
-            ]
-        }
-    }
+DEFAULT_CONFIG = {
+    "theme": "snow",
+    "modules": {
+        "syntax": True,
+        "toolbar": [
+            [
+                {"font": []},
+                {"header": []},
+                {"align": []},
+                "bold",
+                "italic",
+                "underline",
+                "strike",
+                "blockquote",
+                {"color": []},
+                {"background": []},
+            ],
+            ["code-block", "link", "image", "video"],
+            ["clean"],
+        ],
+        # quill-image-compress
+        "imageCompressor": {
+            "quality": 0.8,
+            "maxWidth": 2000,
+            "maxHeight": 2000,
+            "imageType": "image/jpeg",
+            "debug": False,
+            "suppressErrorLogging": True,
+        },
+        # quill-resize
+        "resize": {
+            "showSize": True,
+            "locale": {},
+        },
+    },
 }
