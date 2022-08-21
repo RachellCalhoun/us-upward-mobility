@@ -7,7 +7,8 @@
 <div class="container">
     <div class="row">
     <h1>{{ object.title }}</h1>
-    <p>Published: {{ object.published_date|date }}</p>
+    <small>Published: {{ object.published_date|date }}</small><br>
+    <small class="text-muted">Prepared by: {{ object.author.get_full_name }} </small>
     <hr>
     </div>
     <div class="container"  style="max-width:80%;">
