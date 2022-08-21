@@ -6,3 +6,6 @@ from mobility.models import *
 class QuillPostAdmin(admin.ModelAdmin):
     list_display = ("title", "text",)
     prepopulated_fields = {"slug": ("title",)}
+
+
+admin.site.site_header = 'Upward Mobility'
