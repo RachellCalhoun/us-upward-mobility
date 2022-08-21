@@ -8,7 +8,9 @@
     <div class="row">
     <h1>{{ object.title }}</h1>
     <small>Published: {{ object.published_date|date }}</small><br>
+    {% if object.author.get_full_name %}
     <small class="text-muted">Prepared by: {{ object.author.get_full_name }} </small>
+    {% endif %}
     <hr>
     </div>
     <div class="container"  style="max-width:80%;">
