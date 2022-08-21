@@ -26,3 +26,13 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse("post_detail", kwargs={"slug": self.slug})
+
+
+class SubSection(models.Model):
+    main_post = models.ForeignKey("Post", on_delete=models.CASCADE, related_name="sub_sections")
+    sequence = models.PositiveSmallIntegerField()
+    section_text = QuillField()
+    visualization = models.TextField(null=True, blank=True)
+
+    class Meta:
+        ordering = ['sequence']
