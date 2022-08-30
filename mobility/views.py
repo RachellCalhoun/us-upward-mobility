@@ -6,9 +6,10 @@ from django.template import loader
 from django.http import HttpResponse
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from django.views.generic import TemplateView
 
 from mobility.models import Post
-from mobility.forms import MetricForm, CountyForm
+from mobility.forms import MetricForm, CountyForm, CountyCompareForm
 
 def index(request):
     template = loader.get_template('mobility/index.html')
@@ -29,14 +30,11 @@ def national_view(request):
     metric = request.GET.get('metric', 'population')
     metric_form = MetricForm(initial={'metric': request.GET.get('metric', 'population')})
     template = loader.get_template('mobility/national_view.html')
-
     context = { 'form': metric_form, 'metric': metric}
     return HttpResponse(template.render(context, request))
 
 def county_finder(request):
-
     template = loader.get_template('mobility/county_finder.html')
-
     return HttpResponse(template.render({}, request))
 
 class PostListView(ListView):
@@ -53,5 +51,21 @@ class PostListView(ListView):
 
 
 class PostDetailView(DetailView):
-    # specify the model to use
+
     model = Post
+
+class CountyComparison(TemplateView):
+    template_name = 'mobility/county_comparison.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(CountyComparison, self).get_context_data(**kwargs)  
+        fips1 = self.request.GET.get('fips1', None)
+        fips2 = self.request.GET.get('fips2', None)
+
+        form = CountyCompareForm(initial={'fips1': fips1, 'fips2': fips2})
+        context.update({
+            'form': form, 
+            'fips1': fips1,
+            'fips2': fips2
+        })
+        return context

@@ -10,5 +10,5 @@ urlpatterns = [
     path('national-view', views.national_view, name="national_view"),
     path('county-details', views.county_details, name="county_details" ),
     path('county-rankings', views.county_finder, name="county_finder"),
-    path('resources', TemplateView.as_view(template_name='mobility/resources.html'), name="resources" )
+    path('county-comparison', views.CountyComparison.as_view(), name="county_comparison"),
 ]
