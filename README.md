@@ -1,6 +1,6 @@
 Interative Webapp to visualize upward mobility across the US at a county level. The [Upward Mobility web application](http://upwardmobility.pythonanywhere.com/) is built with Django and hosted on pythonanywhere. 
 
-This project is used along with the [Streamlit app](https://github.com/davidhcoe/mads697) integrated as an iframe. 
+This project is used along with the [Streamlit app](https://github.com/RachellCalhoun/citizenlabs-upwardmobility) integrated as an iframe. 
 
 The data referenced and used for this project was collected, cleaned, and merged using jupyter notebooks and 
 is documented in the [Upward Mobility Repo](https://github.com/laurenrwolf/project-upward-mobility).
