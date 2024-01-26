@@ -12,5 +12,5 @@ class Command(BaseCommand):
     """"""
     def handle(self, *args, **options):
 
-        streamlit_response = re.get('https://rachellcalhoun-citizenlabs-upwardmobili-streamlitappmain-2n5268.streamlitapp.com/')
+        streamlit_response = re.get('https://citizenlabs-upwardmobility-raca.streamlitapp.com/')
         self.stdout.write(f'Script finished runnning with {streamlit_response}')
